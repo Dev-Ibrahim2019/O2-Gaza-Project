@@ -1,19 +1,35 @@
 import React from 'react';
 
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1484723088339-fe447a326054?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=400",
+  "/images/our-images/1.jpg",
+  "/images/our-images/2.jpg",
+  "/images/our-images/3.jpg",
+  "/images/our-images/33.jpg",
+  "/images/our-images/14.jpg",
+  "/images/our-images/34.jpg",
+  "/images/our-images/35.jpg",
+  "/images/our-images/18.jpg",
+  "/images/our-images/19.jpg",
+  "/images/our-images/43.jpg",
+  "/images/our-images/48.jpg",
+  "/images/our-images/52.jpg",
+  "/images/our-images/53.jpg",
 ];
+
+// const HERO_IMAGES = [
+//   "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1567620905732-2d1ec7bb7445?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1484723088339-fe447a326054?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400",
+//   "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=400",
+// ];
 
 const Column = ({ images, animationClass }: { images: string[], animationClass: string }) => (
   <div className={`flex flex-col gap-6 ${animationClass}`}>
@@ -43,9 +59,9 @@ const HeroSection: React.FC = () => {
       {/* Hero Content */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6">
         <div className="animate-[pinterestReveal_1s_ease-out]">
-          <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-8 tracking-tighter drop-shadow-2xl flex items-baseline justify-center gap-4">
-             <span>مطعم</span>
-             <div className="o2-logo-red"><span>2</span>O</div>
+          <h1 className="text-6xl md:text-8xl sm:text-4xl font-extrabold text-white mb-8 tracking-tighter drop-shadow-2xl flex items-baseline justify-center gap-4">
+             <span>GAZA</span> 
+             <div className="o2-logo-red"><span>2</span>0</div>
           </h1>
           <p className="text-white/80 text-lg md:text-xl font-medium tracking-widest max-w-xl mx-auto mt-10 drop-shadow-md">
             نكهة تتنفس الحياة في كل طبق.

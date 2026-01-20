@@ -43,9 +43,11 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl md:text-3xl font-bold">
-                <span className="text-primary">O2</span>{" "}
-                <span className="text-foreground">Gaza</span>
+              <span className="text-4xl md:text-3xl sm:text-2xl font-bold">
+                {/* <span className="text-primary">O2</span>{" "} */}
+
+                <span className="text-foreground">GAZA</span> {" "}
+             <div className="o2-logo-red"><span>2</span>0</div>
               </span>
             </Link>
 
