@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "من نحن" },
+  { href: "/about", label: "من نحن" },
   { href: "#services", label: "خدماتنا" },
   { href: "/categories", label: "الأقسام" },
   { href: "#reviews", label: "آراء العملاء" },
