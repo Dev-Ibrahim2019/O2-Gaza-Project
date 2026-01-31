@@ -193,10 +193,17 @@ export default function AboutPage() {
               تعرف علينا
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance">
-              من نحن في <span className="text-primary">O2 Gaza</span>
+              من نحن في{" "}
+              <span className="text-primary">
+                <span>Gaza</span>{" "}
+                <div className="o2-logo-red text-primary">
+                  <span>2</span>0
+                </div>
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              رحلة من الشغف والتميز في عالم الطهي، نقدم لكم أفضل تجربة طعام في غزة
+              رحلة من الشغف والتميز في عالم الطهي، نقدم لكم أفضل تجربة طعام في
+              غزة
             </p>
           </motion.div>
         </div>
@@ -240,17 +247,19 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  مرحباً بكم في مطعم <strong className="text-foreground">O2 Gaza</strong>، 
-                  وجهتكم المثالية لتجربة طعام استثنائية في قلب غزة. منذ تأسيسنا، 
-                  نسعى لتقديم أفضل المأكولات بجودة عالية وخدمة مميزة.
+                  مرحباً بكم في مطعم{" "}
+                  <strong className="text-foreground">O2 Gaza</strong>، وجهتكم
+                  المثالية لتجربة طعام استثنائية في قلب غزة. منذ تأسيسنا، نسعى
+                  لتقديم أفضل المأكولات بجودة عالية وخدمة مميزة.
                 </p>
                 <p>
-                  نؤمن بأن الطعام ليس مجرد وجبة، بل هو تجربة كاملة تبدأ من لحظة دخولك 
-                  وحتى آخر لقمة. لذلك نحرص على توفير أجواء راقية ومريحة تجعل كل زيارة لا تُنسى.
+                  نؤمن بأن الطعام ليس مجرد وجبة، بل هو تجربة كاملة تبدأ من لحظة
+                  دخولك وحتى آخر لقمة. لذلك نحرص على توفير أجواء راقية ومريحة
+                  تجعل كل زيارة لا تُنسى.
                 </p>
                 <p>
-                  فريقنا من الطهاة المحترفين يعملون بشغف لتحضير أشهى الأطباق الشرقية 
-                  والغربية باستخدام أجود المكونات الطازجة والمحلية.
+                  فريقنا من الطهاة المحترفين يعملون بشغف لتحضير أشهى الأطباق
+                  الشرقية والغربية باستخدام أجود المكونات الطازجة والمحلية.
                 </p>
               </div>
             </motion.div>
@@ -277,10 +286,10 @@ export default function AboutPage() {
                 رؤيتنا
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                أن نكون المطعم الرائد في فلسطين، المعروف بجودة الطعام الاستثنائية 
-                والخدمة المتميزة. نطمح لأن نكون الخيار الأول لكل من يبحث عن تجربة 
-                طعام راقية تجمع بين الأصالة والحداثة، ونسعى لنشر ثقافة الطعام الصحي 
-                واللذيذ في مجتمعنا.
+                أن نكون المطعم الرائد في فلسطين، المعروف بجودة الطعام
+                الاستثنائية والخدمة المتميزة. نطمح لأن نكون الخيار الأول لكل من
+                يبحث عن تجربة طعام راقية تجمع بين الأصالة والحداثة، ونسعى لنشر
+                ثقافة الطعام الصحي واللذيذ في مجتمعنا.
               </p>
             </motion.div>
 
@@ -299,9 +308,10 @@ export default function AboutPage() {
                 رسالتنا
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                تقديم تجربة طعام استثنائية لعملائنا من خلال أطباق مُعدة بعناية 
-                ومكونات طازجة عالية الجودة، في بيئة ترحيبية تجعل كل زيارة مميزة. 
-                نلتزم بتجاوز توقعات عملائنا والمساهمة في رفع معايير قطاع المطاعم في غزة.
+                تقديم تجربة طعام استثنائية لعملائنا من خلال أطباق مُعدة بعناية
+                ومكونات طازجة عالية الجودة، في بيئة ترحيبية تجعل كل زيارة مميزة.
+                نلتزم بتجاوز توقعات عملائنا والمساهمة في رفع معايير قطاع المطاعم
+                في غزة.
               </p>
             </motion.div>
           </div>
@@ -414,7 +424,13 @@ export default function AboutPage() {
               ما يميزنا
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-              لماذا <span className="text-primary">O2</span>؟
+              لماذا{" "}
+              <span className="text-primary text-4xl md:text-6xl">
+                <div className="o2-logo-red text-primary">
+                  <span>2</span>0
+                </div>
+              </span>
+              ؟
             </h2>
             <p className="text-muted-foreground text-lg">
               اكتشف الأسباب التي تجعل O2 Gaza الخيار الأمثل لتجربة طعام مميزة

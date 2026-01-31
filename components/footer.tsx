@@ -34,8 +34,10 @@ export function Footer() {
           >
             <Link href="/" className="inline-block mb-4">
               <span className="text-3xl font-bold">
-                <span className="text-primary">O2</span>{" "}
-                <span className="text-foreground">Gaza</span>
+                <span className="text-foreground">Gaza</span> {" "}
+                <div className="o2-logo-red text-primary">
+                  <span>2</span>0
+                </div>
               </span>
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6">

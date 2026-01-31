@@ -147,7 +147,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="relative">
             {/* Slider Container */}
-            <div className="relative overflow-hidden rounded-3xl bg-card border border-border/50 min-h-[600px] md:min-h-[500px]">
+            <div className="relative overflow-hidden rounded-3xl bg-card border border-border/50 min-h-[600px] md:min-h-[600px]">
               <AnimatePresence initial={false} custom={direction} mode="wait">
                 <motion.div
                   key={currentIndex}

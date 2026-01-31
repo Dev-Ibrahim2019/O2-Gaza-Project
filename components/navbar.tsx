@@ -8,8 +8,8 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/about", label: "من نحن" },
-  { href: "/services", label: "خدماتنا" },
-  { href: "/categories", label: "الأقسام" },
+  { href: "/services", label: "أنشطتنا" },
+  { href: "/categories", label: "المنيو" },
   { href: "#reviews", label: "آراء العملاء" },
   { href: "#gallery", label: "معرض الصور" },
   { href: "#contact", label: "تواصل معنا" },
@@ -48,9 +48,6 @@ export function Navbar() {
                 <div className="o2-logo-red text-primary">
                   <span>2</span>0
                 </div>
-
-                {/* <span className="text-primary">02</span>{" "} */}
-                {/* <span className="text-foreground">Gaza</span> */}
               </span>
             </Link>
 
