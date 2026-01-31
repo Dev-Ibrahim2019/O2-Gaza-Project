@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -9,9 +7,9 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#about", label: "من نحن" },
-  { href: "#services", label: "خدماتنا" },
-  { href: "/categories", label: "الأقسام" },
+  { href: "/about", label: "من نحن" },
+  { href: "/services", label: "أنشطتنا" },
+  { href: "/categories", label: "المنيو" },
   { href: "#reviews", label: "آراء العملاء" },
   { href: "#gallery", label: "معرض الصور" },
   { href: "#contact", label: "تواصل معنا" },
@@ -45,9 +43,11 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl md:text-3xl font-bold">
-                <span className="text-primary">O2</span>{" "}
-                <span className="text-foreground">Gaza</span>
+              <span className="text-3xl md:text-4xl font-bold">
+                <span className="text-foreground">Gaza</span> {" "}
+                <div className="o2-logo-red text-primary">
+                  <span>2</span>0
+                </div>
               </span>
             </Link>
 
@@ -70,7 +70,10 @@ export function Navbar() {
                 asChild
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                <Link href="https://dainty-dragon-98cefd.netlify.app/" target="_blank">
+                <Link
+                  href="https://dainty-dragon-98cefd.netlify.app/"
+                  target="_blank"
+                >
                   اطلب الآن
                 </Link>
               </Button>
@@ -99,10 +102,12 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            <div 
+            <div
               className="absolute inset-0 bg-background/95 backdrop-blur-lg"
               onClick={() => setIsMobileMenuOpen(false)}
-              onKeyDown={(e) => e.key === "Escape" && setIsMobileMenuOpen(false)}
+              onKeyDown={(e) =>
+                e.key === "Escape" && setIsMobileMenuOpen(false)
+              }
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -137,7 +142,10 @@ export function Navbar() {
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                   size="lg"
                 >
-                  <Link href="https://dainty-dragon-98cefd.netlify.app/" target="_blank">
+                  <Link
+                    href="https://dainty-dragon-98cefd.netlify.app/"
+                    target="_blank"
+                  >
                     اطلب الآن
                   </Link>
                 </Button>
