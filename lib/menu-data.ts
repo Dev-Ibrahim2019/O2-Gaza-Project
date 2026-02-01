@@ -437,53 +437,7 @@ const gazaMenu: MenuData = {
 
 // Middle Branch Menu (initially same as Gaza, but can be modified independently)
 const middleMenu: MenuData = {
-  shawarma: {
-    title: "الشاورما",
-    items: [
-      { name: "بيتا شاورما", price: 50, image: "/menu/shawarma/54.jpg" },
-      { name: "شاورما عادي", price: 15, image: "/menu/shawarma/48.jpg" },
-      { name: "فرشوحه دبل", price: 17, image: "/menu/shawarma/5O1A7108.jpg" },
-      {
-        name: "فرشوحه دبل لحمة",
-        price: 23,
-        image: "/menu/shawarma/5O1A7124.jpg",
-      },
-      {
-        name: "فرشوحه دبل دبل",
-        price: 25,
-        image:
-          "https://images.unsplash.com/photo-1542574271-7f3b92e6c821?w=800&q=80",
-        delivery: false,
-      },
-      { name: "سوري", price: 35, image: "/menu/shawarma/53.jpg" },
-      {
-        name: "صفيحة",
-        price: 38,
-        desc: "شاورما - جبنة - زيتون اسود",
-        image: "/menu/shawarma/51.jpg",
-      },
-      {
-        name: "باشكا",
-        price: 40,
-        desc: "خبزة باشكا - شاورما - جبنة - زيتون - صوص بيكانتي",
-        image: "/menu/shawarma/18.jpg",
-      },
-      {
-        name: "شاورما عربي",
-        price: 38,
-        desc: "قطع شاورما - جبنة - زيتون اسود",
-        image: "/menu/shawarma/17.jpg",
-      },
-      {
-        name: "شاورما نابلسي",
-        price: 38,
-        desc: "شاورما - بطاطا - صوص بيكانتي - جبنة - زيتون اسود",
-        image: "/menu/shawarma/19.jpg",
-      },
-      { name: "صحن شاورما كبير", price: 30, image: "/menu/shawarma/14.jpg" },
-      { name: "صحن شاورما صغير", price: 20, image: "/menu/shawarma/13.jpg" },
-    ],
-  },
+  shawarma: gazaMenu.shawarma,
   italian: gazaMenu.italian,
   sandwiches: gazaMenu.sandwiches,
   easternSweets: gazaMenu.easternSweets,
