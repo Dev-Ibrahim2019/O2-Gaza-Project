@@ -13,7 +13,7 @@ import { getMenuByBranch } from "@/lib/menu-data";
 
 import shawarma from "@/public/menu/Shawarma/18.jpg";
 
-import italian from "@/public/menu/Italian/1.jpg";
+import italian from "@/public/menu/Italian/35.jpg";
 
 import sandwiches from "@/public/menu/Western/43.jpg";
 
@@ -27,20 +27,29 @@ import drinks from "@/public/menu/drinks/13.jpg";
 
 import salads from "@/public/menu/salad/20.jpeg";
 
-
+import gelato from "@/public/menu/Gelato/72.jpeg";
 
 const CATEGORY_DISPLAY = [
   { id: "shawarma", name: "الشاورما", image: shawarma, emoji: "🌯" },
   { id: "italian", name: "الإيطالي", image: italian, emoji: "🍕" },
   { id: "sandwiches", name: "السندويشات", image: sandwiches, emoji: "🥪" },
-  { id: "easternSweets", name: "الحلويات الشرقية", image: easternSweets, emoji: "🍰" },
-  { id: "westernSweets", name: "الكيك والحلويات", image: westernSweets, emoji: "🎂" },
+  {
+    id: "easternSweets",
+    name: "الحلويات الشرقية",
+    image: easternSweets,
+    emoji: "🍰",
+  },
+  {
+    id: "westernSweets",
+    name: "الكيك والحلويات",
+    image: westernSweets,
+    emoji: "🎂",
+  },
   { id: "barSweets", name: "حلويات البار", image: barSweets, emoji: "🍫" },
   { id: "drinks", name: "المشروبات", image: drinks, emoji: "🥤" },
   { id: "salads", name: "السلطات", image: salads, emoji: "🥗" },
-  { id: "gelato", name: "الجيلاتو", image: salads, emoji: "🍰" },
+  { id: "gelato", name: "الجيلاتو", image: gelato, emoji: "🍰" },
 ];
-
 
 export default function CategoriesPage() {
   const { selectedBranch } = useBranch();
@@ -50,7 +59,10 @@ export default function CategoriesPage() {
   const [dimensions, setDimensions] = useState({ radius: 210, itemSize: 110 });
 
   const categories = useMemo(
-    () => CATEGORY_DISPLAY.filter((c) => branchMenu[c.id as keyof typeof branchMenu]),
+    () =>
+      CATEGORY_DISPLAY.filter(
+        (c) => branchMenu[c.id as keyof typeof branchMenu]
+      ),
     [branchMenu]
   );
 
@@ -78,10 +90,14 @@ export default function CategoriesPage() {
       {/* Header Section */}
       <section className="pt-28 pb-10 text-center">
         <Link href="/select-branch">
-          <button className="mb-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-semibold text-primary-foreground">
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-lg cursor-pointer bg-primary px-5 py-2.5 font-semibold text-primary-foreground  hover:bg-primary/90 transition-colors"
+          >
             <ArrowRight className="w-5 h-5" />
             اختر فرع آخر
-          </button>
+          </motion.button>
         </Link>
         <h1 className="text-4xl font-bold">استكشف الأقسام</h1>
         <p className="mt-2 text-muted-foreground">
@@ -91,7 +107,6 @@ export default function CategoriesPage() {
 
       {/* Orbit Container */}
       <section className="relative flex items-center justify-center h-[520px] pb-10 mt-10">
-
         {/* 1. الحاوية الدوارة (للأقسام فقط) */}
         <motion.div
           className="relative z-10"
@@ -123,11 +138,22 @@ export default function CategoriesPage() {
                   <motion.div
                     className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary shadow-lg hover:scale-110 transition bg-card"
                     animate={isPaused ? {} : { rotate: -360 }}
-                    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 40,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                   >
-                    <Image src={cat.image} alt={cat.name} fill className="object-cover" />
+                    <Image
+                      src={cat.image}
+                      alt={cat.name}
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 bg-black/60 flex items-end justify-center p-2">
-                      <span className="text-white text-[10px] sm:text-xs font-bold text-center">{cat.name}</span>
+                      <span className="text-white text-[10px] sm:text-xs font-bold text-center">
+                        {cat.name}
+                      </span>
                     </div>
                   </motion.div>
                 </Link>
@@ -142,14 +168,13 @@ export default function CategoriesPage() {
           style={{
             width: itemSize * 1.2,
             height: itemSize * 1.2,
-            maxWidth: '160px',
-            maxHeight: '160px'
+            maxWidth: "160px",
+            maxHeight: "160px",
           }}
         >
           <span className="text-2xl sm:text-4xl">🍽️</span>
           <span className="text-sm sm:text-xl mt-1">الأقسام</span>
         </div>
-
       </section>
 
       <Footer />
