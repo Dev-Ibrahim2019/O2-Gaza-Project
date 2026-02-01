@@ -13,11 +13,11 @@ import { getMenuByBranch } from "@/lib/menu-data";
 
 import shawarma from "@/public/menu/Shawarma/18.jpg";
 
-import italian from "@/public/menu/Italian/35.jpg";
+import italian from "@/public/menu/italian/35.jpg";
 
-import sandwiches from "@/public/menu/Western/43.jpg";
+import sandwiches from "@/public/menu/western/43.jpg";
 
-import easternSweets from "@/public/menu/Sweets/27.jpg";
+import easternSweets from "@/public/menu/sweets/27.jpg";
 
 import barSweets from "@/public/menu/Bar/16.jpg";
 
