@@ -11,7 +11,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getMenuByBranch } from "@/lib/menu-data";
 
-import shawarma from "@/public/menu/shawarma/13.jpg";
+import shawarma from "@/public/menu/shawarma/53.jpg";
 import italian from "@/public/menu/italian/35.jpg";
 import sandwiches from "@/public/menu/western/43.jpg";
 import easternSweets from "@/public/menu/sweets/23.jpg";
@@ -102,11 +102,22 @@ export default function CategoriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Link href="/select-branch">
-              <button className="group flex items-center gap-2 mx-auto text-zinc-400 hover:text-white transition-colors duration-300 text-sm md:text-base">
-                <span className="font-medium">تغيير الفرع الحالي</span>
-                <ArrowLeft className="w-4 h-4 group-hover:translate-x-[-4px] transition-transform" />
-              </button>
+
+            <Link
+              href="/select-branch"
+              className="group inline-flex items-center gap-2 mx-auto mt-6 rounded-lg
+             bg-primary px-5 py-2.5 text-sm md:text-base font-medium
+             text-primary-foreground
+             transition-all duration-300
+             hover:bg-primary/90 hover:gap-3
+             focus:outline-none focus:ring-2 focus:ring-primary/50"
+            >
+              <span>تغيير الفرع الحالي</span>
+
+              <ArrowLeft
+                className="w-4 h-4 transition-transform duration-300
+               group-hover:-translate-x-1"
+              />
             </Link>
           </motion.div>
         </div>

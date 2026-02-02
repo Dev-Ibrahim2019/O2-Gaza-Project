@@ -7,6 +7,7 @@ interface MenuItem {
   name: string;
   price?: number;
   pricePerKg?: number;
+  variants?: { name: string; price: number }[];
   desc?: string;
   image: string;
   delivery?: boolean;
@@ -26,9 +27,16 @@ export function ProductCard({
   onClick,
   byWeight,
 }: ProductCardProps) {
-  const displayPrice = item.pricePerKg
-    ? `${item.pricePerKg} ₪/كغ`
-    : `${item.price} ₪`;
+  const getDisplayPrice = () => {
+    if (item.pricePerKg) return `${item.pricePerKg} ₪/كغ`;
+    if (item.variants && item.variants.length > 0) {
+      const minPrice = Math.min(...item.variants.map((v) => v.price));
+      return `تبدأ من ${minPrice} ₪`;
+    }
+    return `${item.price} ₪`;
+  };
+
+  const displayPrice = getDisplayPrice();
 
   const isUnavailable = item.delivery === false;
 

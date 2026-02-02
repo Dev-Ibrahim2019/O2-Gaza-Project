@@ -5,6 +5,7 @@ export interface MenuItem {
   name: string;
   price?: number;
   pricePerKg?: number;
+  variants?: { name: string; price: number }[];
   desc?: string;
   image: string;
   delivery?: boolean;
@@ -112,7 +113,7 @@ const gazaMenu: MenuData = {
         name: "كاليزوني خضار",
         price: 15,
         desc: "فليفلة - بصل - ذرة - مشروم - زيتون",
-        image: "/menu/italian/32.jpg",
+        image: "/menu/italian/36.jpg",
       },
       {
         name: "بيتزا مكسيكي دجاج",
@@ -182,7 +183,7 @@ const gazaMenu: MenuData = {
         name: "تشكن بيتزا",
         price: 25,
         desc: "صدر دجاج - مشروم - فليفلة - بصل - زيتون اسود - جبنة",
-        image: "/menu/western/42.jpg",
+        image: "/menu/western/45.jpg",
       },
       {
         name: "شيش طاووق",
@@ -260,8 +261,7 @@ const gazaMenu: MenuData = {
       {
         name: "قطع كيك كلاسيكي",
         price: 5,
-        desc: "نوتيلا / بيستاشيو / لوتس",
-        image: "/menu/cake/30.jpg",
+        image: "/menu/cake/5.jpg",
       },
       {
         name: "قطع كيك سبيشل",
@@ -416,30 +416,76 @@ const gazaMenu: MenuData = {
     title: "السلطات",
     items: withDefaultActive([
       {
-        name: "سلطات كبيرة",
-        price: 15,
+        name: "سلطات مشكلة",
+        image: "/menu/salad/1.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "ذرة مايونيز ",
+        image: "/menu/salad/5.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "بيكانتي ",
         image: "/menu/salad/1.jpeg",
         desc: "ذرة مايونيز / بيكانتي / تركية / ثومية",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
       {
-        name: "سلطات وسط",
-        price: 10,
+        name: "تركية",
+        image: "/menu/salad/4.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "ثومية",
         image: "/menu/salad/2.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
       {
-        name: "سلطات صغيرة",
-        price: 5,
-        image: "/menu/salad/1.jpeg",
+        name: "ملفوف",
+        image: "/menu/salad/3.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
       {
-        name: "بطاطا كبيرة",
-        price: 10,
+        name: "كول سلو",
+        image: "/menu/salad/6.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "بطاطا",
         image: "/menu/salad/20.jpeg",
-      },
-      {
-        name: "بطاطا صغيرة",
-        price: 5,
-        image: "/menu/salad/20.jpeg",
+        variants: [
+          { name: "كبير", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
     ]),
   },
@@ -487,7 +533,7 @@ export function getMenuByBranch(branch: string): MenuData {
  */
 export function getCategoryByBranch(
   branch: string,
-  categoryId: string
+  categoryId: string,
 ): MenuCategory | null {
   const menu = getMenuByBranch(branch);
   return menu[categoryId] || null;
