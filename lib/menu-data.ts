@@ -203,7 +203,7 @@ const gazaMenu: MenuData = {
     byWeight: true,
     items: withDefaultActive([
       { name: "نمورة", pricePerKg: 15, image: "/menu/sweets/25.jpeg" },
-      { name: "بسبوسة", pricePerKg: 20, image: "/menu/sweets/81.jpeg" },
+      { name: "بسبوسة", pricePerKg: 20, image: "/menu/sweets/82.jpeg" },
       { name: "كلاج", pricePerKg: 20, image: "/menu/sweets/3.1.jpg" },
       { name: "عش البلبل", pricePerKg: 30, image: "/menu/sweets/7.jpg" },
       { name: "نابلسية", pricePerKg: 60, image: "/menu/sweets/23.jpg" },
@@ -239,9 +239,7 @@ const gazaMenu: MenuData = {
       {
         name: "بلورية حلبي",
         pricePerKg: 130,
-        image:
-          "https://images.unsplash.com/photo-1571167530149-c6f274f6db8f?w=800&q=80",
-        // active: false,
+        image: "/menu/sweets/84.jpeg"
       },
       { name: "دولمة حلبي", pricePerKg: 130, image: "/menu/sweets/27.jpg" },
     ]),
@@ -252,7 +250,7 @@ const gazaMenu: MenuData = {
       { name: "قالب كيك صغير", price: 60, image: "/menu/cake/9.jpg" },
       { name: "قالب كيك كبير", price: 80, image: "/menu/cake/10.jpg" },
       { name: "قالب كيك اسبيسشل صغير", price: 80, image: "/menu/cake/38.jpg" },
-      { name: "قالب كيك اسبيسشل كبير", price: 100, image: "/menu/cake/38.jpg" },
+      { name: "قالب كيك اسبيسشل كبير", price: 100, image: "/menu/cake/88.jpeg" },
       { name: "سويس رول", price: 8, image: "/menu/cake/31.jpg" },
       { name: "تريلتشا", price: 10, image: "/menu/cake/21.jpg" },
       {
@@ -296,7 +294,7 @@ const gazaMenu: MenuData = {
       {
         name: "كريب (نوتيلا / بيستاشيو / لوتس)",
         price: 25,
-        image: "/menu/bar/64.jpg",
+        image: "/menu/bar/85.jpeg",
       },
       { name: "كريب دبي", price: 30, image: "/menu/bar/14.jpg" },
       {
@@ -337,7 +335,7 @@ const gazaMenu: MenuData = {
       {
         name: "ميني بان كيك",
         price: 25,
-        image: "/menu/bar/38.jpg",
+        image: "/menu/bar/83.jpeg",
         desc: "نوتيلا / بيستاشيو / لوتس",
       },
       {
