@@ -234,8 +234,7 @@ const gazaMenu: MenuData = {
         name: "بورما حلبي",
         pricePerKg: 100,
         image:
-          "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&q=80",
-        // active: false,
+          "/menu/sweets/78.jpeg",
       },
       {
         name: "بلورية حلبي",
@@ -398,13 +397,6 @@ const gazaMenu: MenuData = {
       { name: "آيس كافي", price: 10, image: "/menu/drinks/10.jpg" },
       { name: "ميلك شيك", price: 15, image: "/menu/drinks/8.jpg" },
       { name: "موهيتو", price: 20, image: "/menu/drinks/16.jpg" },
-      {
-        name: "آيس كريم",
-        price: 10,
-        image: "/menu/drinks/14.jpg",
-        active: false,
-      },
-      { name: "براد", price: 5, image: "/menu/drinks/15.jpg", active: false },
       { name: "نسكافيه", price: 5, image: "/menu/drinks/9.jpg" },
       { name: "كابتشينو", price: 5, image: "/menu/drinks/9.jpg" },
       { name: "اسبريسو سينجل", price: 5, image: "/menu/drinks/6.jpg" },
@@ -506,7 +498,14 @@ const middleMenu: MenuData = {
   easternSweets: gazaMenu.easternSweets,
   westernSweets: gazaMenu.westernSweets,
   barSweets: gazaMenu.barSweets,
-  drinks: gazaMenu.drinks,
+  drinks: {
+    ...gazaMenu.drinks,
+    items: withDefaultActive([
+      { name: "آيس كريم", price: 10, image: "/menu/drinks/14.jpg", active: true },
+      { name: "براد", price: 5, image: "/menu/drinks/15.jpg", active: true },
+      ...gazaMenu.drinks.items,
+    ]),
+  },
   salads: gazaMenu.salads,
 };
 
