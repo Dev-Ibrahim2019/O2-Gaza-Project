@@ -1291,7 +1291,7 @@ function CategoryPageContent({ defaultBranch }: { defaultBranch: string }) {
             <Link href="/categories">
               <Button
                 variant="outline"
-                className="text-foreground border-border hover:bg-muted gap-2 bg-transparent"
+                className="text-foreground bg-primary border-border hover:text-amber-50 hover:bg-primary/90 gap-2  "
               >
                 <ChevronLeft className="w-4 h-4" />
                 الأقسام
