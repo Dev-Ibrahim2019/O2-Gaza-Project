@@ -749,6 +749,7 @@ function CustomerFormModal({
   onSubmit,
   deliveryLocations,
   branch,
+  initialData,
 }: {
   onClose: () => void;
   onBack: () => void;
@@ -761,12 +762,19 @@ function CustomerFormModal({
   }) => void;
   deliveryLocations: typeof CONFIG.deliveryLocations;
   branch: string;
+  initialData?: {
+    name: string;
+    phone: string;
+    address: string;
+    location: DeliveryLocation | null;
+    notes: string;
+  };
 }) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [locationName, setLocationName] = useState<string>("");
-  const [notes, setNotes] = useState("");
+  const [name, setName] = useState(initialData?.name || "");
+  const [phone, setPhone] = useState(initialData?.phone || "");
+  const [address, setAddress] = useState(initialData?.address || "");
+  const [locationName, setLocationName] = useState<string>(initialData?.location?.name || "");
+  const [notes, setNotes] = useState(initialData?.notes || "");
 
   const locations = deliveryLocations[branch as keyof typeof deliveryLocations] || [];
   const selectedLocation = locations.find((l) => l.name === locationName);
@@ -1395,6 +1403,13 @@ function CategoryPageContent({ defaultBranch }: { defaultBranch: string }) {
             onSubmit={handleCustomerSubmit}
             deliveryLocations={CONFIG.deliveryLocations}
             branch={defaultBranch}
+            initialData={{
+              name: customerInfo.name,
+              phone: customerInfo.phone,
+              address: customerInfo.address,
+              location: selectedLocation,
+              notes: orderNotes,
+            }}
           />
         )}
       </AnimatePresence>
