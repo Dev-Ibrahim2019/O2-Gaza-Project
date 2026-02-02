@@ -62,6 +62,7 @@ interface MenuItem {
   name: string;
   price?: number;
   pricePerKg?: number;
+  variants?: { name: string; price: number }[];
   desc?: string;
   image: string;
   delivery?: boolean;
@@ -387,28 +388,76 @@ const menuData: Record<string, MenuCategory> = {
     title: "السلطات",
     items: [
       {
-        name: "سلطة كبيرة",
-        price: 10,
-        image:
-          "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80",
+        name: "سلطات مشكلة",
+        image: "/menu/salad/1.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
       {
-        name: "سلطة صغيرة",
-        price: 5,
-        image:
-          "https://images.unsplash.com/photo-1639024471283-03518883512d?w=800&q=80",
+        name: "ذرة مايونيز ",
+        image: "/menu/salad/5.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
       {
-        name: "بطاطا كبيرة",
-        price: 10,
-        image:
-          "https://images.unsplash.com/photo-1598679253544-2c97992403ea?w=800&q=80",
+        name: "بيكانتي ",
+        image: "/menu/salad/1.jpeg",
+        desc: "ذرة مايونيز / بيكانتي / تركية / ثومية",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
       {
-        name: "بطاطا صغيرة",
-        price: 5,
-        image:
-          "https://images.unsplash.com/photo-1639024471283-03518883512d?w=800&q=80",
+        name: "تركية",
+        image: "/menu/salad/4.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "ثومية",
+        image: "/menu/salad/2.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "ملفوف",
+        image: "/menu/salad/3.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "كول سلو",
+        image: "/menu/salad/6.jpeg",
+        variants: [
+          { name: "كبير", price: 15 },
+          { name: "وسط", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
+      },
+      {
+        name: "بطاطا",
+        image: "/menu/salad/20.jpeg",
+        variants: [
+          { name: "كبير", price: 10 },
+          { name: "صغير", price: 5 },
+        ],
       },
     ],
   },
@@ -462,13 +511,19 @@ function ProductModal({
   const [qty, setQty] = useState(1);
   const [weight, setWeight] = useState(1);
   const [priceInput, setPriceInput] = useState("");
+  const [selectedVariant, setSelectedVariant] = useState(
+    product?.variants ? product.variants[0] : null
+  );
 
   const calculatedPrice = useMemo(() => {
     if (isByWeight && product?.pricePerKg) {
       return weight * product.pricePerKg;
     }
+    if (selectedVariant) {
+      return selectedVariant.price * qty;
+    }
     return (product?.price || 0) * qty;
-  }, [isByWeight, product, weight, qty]);
+  }, [isByWeight, product, weight, qty, selectedVariant]);
 
   const canDeliver = product?.delivery !== false;
 
@@ -496,13 +551,24 @@ function ProductModal({
     if (isByWeight && weight > 0) {
       return `أريد طلب: ${product.name} - وزن ${weight.toFixed(2)} كغ (السعر ${calculatedPrice.toFixed(1)} شيكل)`;
     }
-    return `أريد طلب: ${product.name} × ${qty}`;
-  }, [product, isByWeight, weight, qty, calculatedPrice]);
+    const variantStr = selectedVariant ? ` (${selectedVariant.name})` : "";
+    return `أريد طلب: ${product.name}${variantStr} × ${qty}`;
+  }, [product, isByWeight, weight, qty, calculatedPrice, selectedVariant]);
 
   const handleAddToCart = () => {
     if (!product || !canDeliver) return;
     if (isByWeight && (calculatedPrice <= 0 || weight <= 0)) return;
-    onAddToCart(product, qty, weight, calculatedPrice, isByWeight);
+
+    let finalProduct = product;
+    if (selectedVariant) {
+      finalProduct = {
+        ...product,
+        name: `${product.name} - ${selectedVariant.name}`,
+        price: selectedVariant.price,
+      };
+    }
+
+    onAddToCart(finalProduct, qty, weight, calculatedPrice, isByWeight);
     onClose();
   };
 
@@ -582,6 +648,25 @@ function ProductModal({
                     className={`py-2 px-3 border-2 border-primary rounded-lg font-semibold transition-colors ${weight === w && !priceInput ? "bg-primary text-primary-foreground" : "bg-transparent text-white"}`}
                   >
                     {w} كغ
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {product.variants && (
+            <div className="bg-primary/10 border-2 border-primary rounded-xl p-4 mb-4">
+              <label className="block text-right mb-2 font-bold text-sm">
+                🏷️ اختر النوع / الحجم
+              </label>
+              <div className="grid grid-cols-3 gap-2">
+                {product.variants.map((v) => (
+                  <button
+                    key={v.name}
+                    onClick={() => setSelectedVariant(v)}
+                    className={`py-2 px-1 border-2 border-primary rounded-lg font-semibold transition-colors text-xs md:text-sm ${selectedVariant?.name === v.name ? "bg-primary text-primary-foreground" : "bg-transparent text-white"}`}
+                  >
+                    {v.name} ({v.price} ₪)
                   </button>
                 ))}
               </div>
