@@ -89,7 +89,6 @@ export default function SelectBranchPage() {
                                         onClick={() => {
                                             setSelectedBranch(branch.id);
                                             localStorage.setItem("branch", branch.id); // حفظ الفرع
-                                            router.push(`/categories?branch=${branch.id}`);
                                         }}
                                         className="relative h-full rounded-2xl overflow-hidden bg-card border-2 border-border hover:border-primary/50 transition-all duration-300 p-8 cursor-pointer group"
                                     >
