@@ -395,7 +395,7 @@ const gazaMenu: MenuData = {
       { name: "شوكو بارد", price: 10, image: "/menu/drinks/7.jpg" },
       { name: "ايس موكا", price: 10, image: "/menu/drinks/5.jpg" },
       { name: "آيس كافي", price: 10, image: "/menu/drinks/10.jpg" },
-      { name: "ميلك شيك", price: 15, image: "/menu/drinks/8.jpg" },
+      { name: "ميلك شيك", price: 15, image: "/menu/drinks/8.jpg", desc: "شوكولاتة / فانيلا / فراولة / اوريو / بلوبيري" },
       { name: "موهيتو", price: 20, image: "/menu/drinks/16.jpg" },
       { name: "نسكافيه", price: 5, image: "/menu/drinks/9.jpg" },
       { name: "كابتشينو", price: 5, image: "/menu/drinks/9.jpg" },

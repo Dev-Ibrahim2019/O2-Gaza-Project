@@ -91,7 +91,7 @@ const HeroSection: React.FC = () => {
         <div className="mt-14 animate-[pinterestReveal_1.2s_ease-out]">
           <a href="/select-branch" className="group relative inline-flex items-center justify-center px-14 py-5 rounded-2xl bg-red-600 text-white text-xl font-bold transition-all hover:bg-red-700 hover:scale-105 active:scale-95 shadow-2xl shadow-red-600/30 overflow-hidden">
             <span className="relative z-10 flex items-center gap-3">
-              اكتشف القائمة
+                اطلب من المنيو
               <svg className="w-5 h-5 transform transition-transform group-hover:translate-x-[-6px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 19l-7-7 7-7" />
               </svg>

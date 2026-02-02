@@ -26,12 +26,12 @@ import { getMenuByBranch } from "@/lib/menu-data";
 const CATEGORY_DISPLAY = [
   { id: "shawarma", name: "الشاورما", image: "/menu/shawarma/53.jpg" },
   { id: "italian", name: "الإيطالي", image: "/menu/italian/35.jpg" },
-  { id: "sandwiches", name: "السندويشات", image: "/menu/western/43.jpg" },
+  { id: "sandwiches", name: "الوجبات الغربية", image: "/menu/western/43.jpg" },
   { id: "easternSweets", name: "الحلويات الشرقية", image: "/menu/sweets/23.jpg" },
-  { id: "westernSweets", name: "الكيك والحلويات", image: "/menu/Cake/11.2.jpg" },
-  { id: "barSweets", name: "حلويات البار", image: "/menu/bar/16.jpg" },
-  { id: "drinks", name: "المشروبات", image: "/menu/drinks/13.jpg" },
-  { id: "salads", name: "السلطات", image: "/menu/salad/20.jpeg" },
+  { id: "westernSweets", name: "الكيك والحلويات", image: "/menu/Cake/38.jpg" },
+  { id: "barSweets", name: "حلويات البار", image: "/menu/bar/14.jpg" },
+  { id: "drinks", name: "المشروبات", image: "/menu/drinks/1.jpg" },
+  { id: "salads", name: "المقبلات", image: "/menu/salad/20.jpeg" },
   { id: "gelato", name: "الجيلاتو", image: "/menu/Gelato/72.jpeg" },
 ];
 
