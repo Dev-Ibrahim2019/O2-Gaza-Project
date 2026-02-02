@@ -11,12 +11,11 @@ import { Footer } from "@/components/footer";
 import { useBranch } from "@/lib/branch-context";
 import { getMenuByBranch } from "@/lib/menu-data";
 
-// استيراد الصور (نفس الصور السابقة)
 import shawarma from "@/public/menu/shawarma/13.jpg";
 import italian from "@/public/menu/italian/35.jpg";
 import sandwichess from "@/public/menu/western/43.jpg";
 import easternSweets from "@/public/menu/sweets/23.jpg";
-import barSweets from "@/public/menu/bar/16.jpg";
+import bar from "@/public/menu/bar/16.jpg";
 import westernSweets from "@/public/menu/Cake/11.2.jpg";
 import drinkss from "@/public/menu/drinks/13.jpg";
 import salads from "@/public/menu/salad/20.jpeg";
@@ -28,7 +27,7 @@ const CATEGORY_DISPLAY = [
   { id: "sandwiches", name: "السندويشات", image: sandwichess, },
   { id: "easternSweets", name: "الحلويات الشرقية", image: easternSweets, },
   { id: "westernSweets", name: "الكيك والحلويات", image: westernSweets, },
-  { id: "barSweets", name: "حلويات البار", image: barSweets, },
+  { id: "barSweets", name: "حلويات البار", image: bar, },
   { id: "drinks", name: "المشروبات", image: drinkss, },
   { id: "salads", name: "السلطات", image: salads, },
   { id: "gelato", name: "الجيلاتو", image: gelatoo, },
