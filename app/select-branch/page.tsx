@@ -30,7 +30,9 @@ const itemVariants = {
     },
 };
 
-export function BranchProvider({ children }) {
+import { ReactNode } from "react";
+
+export function BranchProvider({ children }: { children: ReactNode }) {
     const { setSelectedBranch } = useBranch();
 
     useEffect(() => {
