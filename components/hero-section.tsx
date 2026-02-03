@@ -83,8 +83,8 @@ const HeroSection: React.FC = () => {
             <span className='tracking-normal'>Gaza</span>
             <div className="o2-logo-red"><span>2</span>0</div>
           </h1>
-          <p className="text-white/80 text-lg md:text-xl font-medium tracking-widest max-w-xl mx-auto mt-10 drop-shadow-md">
-            نكهة تتنفس الحياة في كل طبق.
+          <p className="text-white text-lg md:text-xl font-medium tracking-widest max-w-xl mx-auto mt-10 drop-shadow-md ">
+            نفس من الهدوء ولقمة من السعادة
           </p>
         </div>
 
