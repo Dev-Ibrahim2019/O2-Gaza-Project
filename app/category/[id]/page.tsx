@@ -1379,13 +1379,13 @@ function CategoryPageContent({ defaultBranch }: { defaultBranch: string }) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="sticky top-[64px] md:top-[80px] z-[1000] bg-background/80 backdrop-blur-lg   py-3 mb-6"
+            className="sticky top-[64px] md:top-[80px] z-[1000] py-3 mb-6"
           >
 
             <Link href="/categories">
               <Button
                 variant="outline"
-                className="text-foreground bg-primary border-border hover:text-amber-50 hover:bg-primary/90 gap-2  "
+                className="text-foreground bg-primary border-primary hover:text-amber-50 hover:bg-primary/90 gap-2  "
               >
                 <ChevronLeft className="w-4 h-4" />
                 الأقسام
